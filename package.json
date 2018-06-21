@@ -1,0 +1,19 @@
+{
+  "name": "college-search",
+  "version": "1.0.0",
+  "description": "A web app to recommend colleges to users based on location, test scores, and GPA",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinayakgajjewar/college-search.git"
+  },
+  "author": "Vinayak Gajjewar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinayakgajjewar/college-search/issues"
+  },
+  "homepage": "https://github.com/vinayakgajjewar/college-search#readme"
+}
