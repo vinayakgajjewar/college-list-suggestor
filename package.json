@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/vinayakgajjewar/college-search/issues"
   },
-  "homepage": "https://github.com/vinayakgajjewar/college-search#readme"
+  "homepage": "https://github.com/vinayakgajjewar/college-search#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10"
+  }
 }

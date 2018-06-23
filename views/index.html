@@ -1,0 +1,107 @@
+<!-- Take list of all possible focuses from Niche.com -->
+<!-- Add a shout-out to Microsoft Azure, Node.js, Express.js, MongoDB, and mLab -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <title>CollegeSearch</title>
+  </head>
+  <body>
+    <div id="page-content" class="container">
+      <div class="row">
+        <div class="col-lg">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="card-title">Find the perfect school for you!</h1>
+            </div>
+            <div class="card-body">
+              <form action="/student-profile" method="POST">
+                <div class="form-group">
+                  <label for="satScoreInput">Enter your SAT score</label>
+                  <input class="form-control" placeholder="SAT score" type="text" name="satScore">
+                </div>
+                <div class="form-group">
+                  <label for="gpaInput">Enter your GPA</label>
+                  <input class="form-control" placeholder="GPA" type="text" name="gpa">
+                </div>
+                <div class="form-group">
+                  <label for="focusSelect">What do you want to study in college?</label>
+                  <select class="custom-select" name="focus">
+                    <option value="anthropology-archaeology">Anthropology/Archaeology</option>
+                    <option value="biology">Biology</option>
+                    <option value="cognitive-science">Cognitive Science</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="stateSelect">Where do you want to go for college?</label>
+                  <select class="custom-select" name="state">
+                    <option value="alabama">Alabama</option>
+                    <option value="alaska">Alaska</option>
+                    <option value="arizona">Arizona</option>
+                    <option value="arkansas">Arkansas</option>
+                    <option value="california">California</option>
+                    <option value="colorado">Colorado</option>
+                    <option value="connecticut">Connecticut</option>
+                    <option value="delaware">Delaware</option>
+                    <option value="florida">Florida</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="hawaii">Hawaii</option>
+                    <option value="idaho">Idaho</option>
+                    <option value="illinois">Illinois</option>
+                    <option value="indiana">Indiana</option>
+                    <option value="iowa">Iowa</option>
+                    <option value="kansas">Kansas</option>
+                    <option value="kentucky">Kentucky</option>
+                    <option value="louisiana">Louisiana</option>
+                    <option value="maine">Maine</option>
+                    <option value="maryland">Maryland</option>
+                    <option value="massachusetts">Massachusetts</option>
+                    <option value="michigan">Michigan</option>
+                    <option value="minnesota">Minnesota</option>
+                    <option value="mississippi">Mississippi</option>
+                    <option value="missouri">Missouri</option>
+                    <option value="montana">Montana</option>
+                    <option value="nebraska">Nebraska</option>
+                    <option value="nevada">Nevada</option>
+                    <option value="new-hampshire">New Hampshire</option>
+                    <option value="new-jersey">New Jersey</option>
+                    <option value="new-mexico">New Mexico</option>
+                    <option value="new-york">New York</option>
+                    <option value="north-carolina">North Carolina</option>
+                    <option value="north-dakota">North Dakota</option>
+                    <option value="ohio">Ohio</option>
+                    <option value="oklahoma">Oklahoma</option>
+                    <option value="oregon">Oregon</option>
+                    <option value="pennsylvania">Pennsylvania</option>
+                    <option value="rhode-island">Rhode Island</option>
+                    <option value="south-carolina">South Carolina</option>
+                    <option value="south-dakota">South Dakota</option>
+                    <option value="tennessee">Tennessee</option>
+                    <option value="texas">Texas</option>
+                    <option value="utah">Utah</option>
+                    <option value="vermont">Vermont</option>
+                    <option value="virginia">Virginia</option>
+                    <option value="washington">Washington</option>
+                    <option value="west-virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Make my college list!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg">
+        </div>
+        <div class="col-lg"></div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
