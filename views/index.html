@@ -1,10 +1,13 @@
-<!-- Take list of all possible focuses from Niche.com -->
-<!-- Add a shout-out to Microsoft Azure, Node.js, Express.js, MongoDB, and mLab -->
+<!-- TODO: Take list of all possible focuses from the data dictionary -->
+<!-- TODO: Add a shout-out to Microsoft Azure, Node.js, Express.js, MongoDB, and mLab -->
+<!-- TODO: Use jQuery to send the POST requests -->
+<!-- TODO: Find a way to loop over all the US states for the dropdown -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
     <title>CollegeSearch</title>
@@ -15,29 +18,31 @@
         <div class="col-lg">
           <div class="card">
             <div class="card-header">
-              <h1 class="card-title">Find the perfect school for you!</h1>
+              <h1 class="card-title">Find the perfect college for you!</h1>
             </div>
             <div class="card-body">
               <form action="/student-profile" method="POST">
                 <div class="form-group">
                   <label for="satScoreInput">Enter your SAT score</label>
-                  <input class="form-control" placeholder="SAT score" type="text" name="satScore">
+                  <input class="form-control" placeholder="SAT score" type="text" name="satScore" id="satScoreInput">
                 </div>
                 <div class="form-group">
                   <label for="gpaInput">Enter your GPA</label>
-                  <input class="form-control" placeholder="GPA" type="text" name="gpa">
+                  <input class="form-control" placeholder="GPA" type="text" name="gpa" id="gpaInput">
                 </div>
                 <div class="form-group">
                   <label for="focusSelect">What do you want to study in college?</label>
-                  <select class="custom-select" name="focus">
-                    <option value="anthropology-archaeology">Anthropology/Archaeology</option>
-                    <option value="biology">Biology</option>
-                    <option value="cognitive-science">Cognitive Science</option>
+                  <select class="custom-select" name="focus" id="focusInput">
+                    <option value="agriculture">Agriculture, Agriculture Operations, And Related Sciences</option>
+                    <option value="resources">Natural Resources And Conservation</option>
+                    <option value="architecture">Architecture And Related Services</option>
+                    <option value="ethnic_cultural_gender">Area, Ethnic, Cultural, Gender, And Group Studies</option>
+                    <!-- TODO: Finish this list -->
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="stateSelect">Where do you want to go for college?</label>
-                  <select class="custom-select" name="state">
+                  <label for="stateSelect">What state do you want to go to college in?</label>
+                  <select class="custom-select" name="state" id="stateInput">
                     <option value="alabama">Alabama</option>
                     <option value="alaska">Alaska</option>
                     <option value="arizona">Arizona</option>
@@ -90,14 +95,29 @@
                     <option value="Wyoming">Wyoming</option>
                   </select>
                 </div>
-                <button type="submit" class="btn">Make my college list!</button>
+                <button class="btn" type="submit" id="collegeListSubmitBtn">Make my college list!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="card-title">Search for a college</h1>
+            </div>
+            <div class="card-body">
+              <form action="/search" method="POST">
+                <div class="form-group">
+                  <label for="schoolNameInput">Enter the full name of a college you want to learn more about</label>
+                  <input id="schoolNameInput" name="schoolName" class="form-control" placeholder="Super Cool University" type="text">
+                </div>
+                <button id="searchSubmitBtn" type="submit" class="btn">Find my college!</button>
               </form>
             </div>
           </div>
         </div>
         <div class="col-lg">
         </div>
-        <div class="col-lg"></div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

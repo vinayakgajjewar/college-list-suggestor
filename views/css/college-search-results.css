@@ -1,8 +1,7 @@
-.card {
-  margin-top: 20px;
-}
-
 body {
   background-color: #4c566a;
   font-family: "Titillium Web", sans-serif;
+}
+ul {
+  margin-top: 20px;
 }
