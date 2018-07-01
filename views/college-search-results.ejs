@@ -16,18 +16,18 @@
         </div>
         <ul class="list-group list-group-flush">
           <% for (var i = 0; i < locals.schoolNames.length; i++) { %>
-          <li class="list-group-item">
-            <h3><%= locals.schoolNames[i] %></h3>
-            <p>Acceptance Rate: <%= locals.admissionRates[i] %><p>
-          </li>
+            <li class="list-group-item">
+              <h3><%= locals.schoolNames[i] %></h3>
+              <p>Acceptance Rate: <%= locals.admissionRates[i] %><p>
+            </li>
           <% } %>
         </ul>
         <!-- If there are no results for the search criteria -->
         <% if (locals.schoolNames.length == 0) { %>
-        <div class="card-body">
-          <h3>Sorry, no results found!</h3>
-          <p>Try to use a college's full name for accurate results</p>
-        </div>
+          <div class="card-body">
+            <h3>Sorry, no results found!</h3>
+            <p>Try to use a college's full name for accurate results</p>
+          </div>
         <% } %>
       </div>
     </div>
