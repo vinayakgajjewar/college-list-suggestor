@@ -16,7 +16,7 @@ var collegelist = require("./collegelist");
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
-var port = 3000;
+var port = 3001; // So I can run multiple servers at the same time
 
 var dbURI = "mongodb://college-search-client:college-search-client-1@ds018508.mlab.com:18508/college-search-db";
 var db;
