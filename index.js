@@ -41,6 +41,10 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/about", function(req, res) {
+  res.sendFile(__dirname + "/views/about.html");
+});
+
 app.post("/student-profile", function(req, res) {
   console.log("POST /student-profile");
 
