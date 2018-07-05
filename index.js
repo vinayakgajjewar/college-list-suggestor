@@ -79,27 +79,18 @@ app.post("/search", function(req, res) {
   api.makeAPICall(requestString, "2015", function(results) {
 
     var schoolNameArray = [];
-    var admissionRatesArray = [];
-    var avgSATScoresArray = [];
-    var avgACTScoresArray = [];
     var citiesArray = [];
     var statesArray = [];
 
     // Loop through the "results" array and push each school name
     for (var i = 0; i < results.length; i++) {
       schoolNameArray.push(results[i]["school.name"]);
-      admissionRatesArray.push(results[i]["2015.admissions.admission_rate.overall"]);
-      avgSATScoresArray.push(results[i]["2015.admissions.sat_scores.average.overall"]);
-      avgACTScoresArray.push(results[i]["2015.admissions.act_scores.midpoint.cumulative"]);
       citiesArray.push(results[i]["school.city"]);
       statesArray.push(results[i]["school.state"]);
     }
 
     var localsObj = {
       schoolNames: schoolNameArray,
-      admissionRates: admissionRatesArray,
-      satScores: avgSATScoresArray,
-      actScores: avgACTScoresArray,
       cities: citiesArray,
       states: statesArray,
     }
