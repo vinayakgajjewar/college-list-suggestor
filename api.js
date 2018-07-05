@@ -14,7 +14,7 @@ exports.makeAPICall = function(schoolName, year, then) {
   var url = "https://api.data.gov/ed/collegescorecard/v1/schools?school.name=";
 
   // Append the API key to the URL
-  var fullURL = url + schoolName + "&fields=school.name," + year + ".admissions.admission_rate.overall" + "&api_key=" + apiKey;
+  var fullURL = url + schoolName + "&fields=school.name,school.city,school.state," + year + ".admissions.admission_rate.overall," + year + ".admissions.sat_scores.average.overall," + year + ".admissions.act_scores.midpoint.cumulative" + "&api_key=" + apiKey;
 
   request(fullURL, function(error, response, body) {
     if (error) {

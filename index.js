@@ -80,23 +80,31 @@ app.post("/search", function(req, res) {
 
     var schoolNameArray = [];
     var admissionRatesArray = [];
+    var avgSATScoresArray = [];
+    var avgACTScoresArray = [];
+    var citiesArray = [];
+    var statesArray = [];
 
     // Loop through the "results" array and push each school name
     for (var i = 0; i < results.length; i++) {
       schoolNameArray.push(results[i]["school.name"]);
-    }
-    for (var i = 0; i < results.length; i++) {
-      admissionRatesArray.push(results[i]["2015.admissions.admission_rate.overall"])
+      admissionRatesArray.push(results[i]["2015.admissions.admission_rate.overall"]);
+      avgSATScoresArray.push(results[i]["2015.admissions.sat_scores.average.overall"]);
+      avgACTScoresArray.push(results[i]["2015.admissions.act_scores.midpoint.cumulative"]);
+      citiesArray.push(results[i]["school.city"]);
+      statesArray.push(results[i]["school.state"]);
     }
 
     var localsObj = {
       schoolNames: schoolNameArray,
-      admissionRates: admissionRatesArray
+      admissionRates: admissionRatesArray,
+      satScores: avgSATScoresArray,
+      actScores: avgACTScoresArray,
+      cities: citiesArray,
+      states: statesArray,
     }
 
-    // Contains all the names of the colleges separated by commas
-    var collegeResultsString = schoolNameArray.toString();
-    res.render("college-search-results.ejs", {locals: localsObj}); // Change this
+    res.render("college-search-results.ejs", {locals: localsObj});
   });
 });
 

@@ -34,7 +34,8 @@
           <% for (var i = 0; i < locals.schoolNames.length; i++) { %>
             <li class="list-group-item">
               <h3><%= locals.schoolNames[i] %></h3>
-              <p>Acceptance Rate: <%= locals.admissionRates[i] %><p>
+              <!--<p class="text-muted">Acceptance Rate (2015): <%= locals.admissionRates[i] %> Average SAT (2015): <%= locals.satScores[i] %> Average ACT (2015): <%= locals.actScores[i] %><p>-->
+              <p class="text-muted"><%= locals.cities[i] %>, <%= locals.states[i] %></p>
             </li>
           <% } %>
         </ul>
