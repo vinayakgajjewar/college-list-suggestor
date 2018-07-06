@@ -70,6 +70,11 @@ app.get("/search", function(req, res) {
   res.redirect("/");
 });
 
+// Redirect to /
+app.get("/learn-more", function(req, res) {
+  res.redirect("/");
+});
+
 app.post("/search", function(req, res) {
   console.log("POST /search");
 
@@ -81,22 +86,30 @@ app.post("/search", function(req, res) {
     var schoolNameArray = [];
     var citiesArray = [];
     var statesArray = [];
+    var idArray = [];
 
     // Loop through the "results" array and push each school name
     for (var i = 0; i < results.length; i++) {
       schoolNameArray.push(results[i]["school.name"]);
       citiesArray.push(results[i]["school.city"]);
       statesArray.push(results[i]["school.state"]);
+      idArray.push(results[i]["id"]);
     }
 
     var localsObj = {
       schoolNames: schoolNameArray,
       cities: citiesArray,
       states: statesArray,
+      ids: idArray
     }
 
     res.render("college-search-results.ejs", {locals: localsObj});
   });
+});
+
+app.post("/learn-more", function(req, res) {
+  console.log("POST /learn-more");
+  res.render("college-info.ejs", {locals: req.body.unitId}); // Make an API call here
 });
 
 app.use(function(req, res, next) {
