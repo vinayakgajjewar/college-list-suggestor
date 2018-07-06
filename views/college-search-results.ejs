@@ -9,7 +9,7 @@
     <title>Search Results</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">CollegeSearch</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
         <ul class="list-group list-group-flush">
           <% for (var i = 0; i < locals.schoolNames.length; i++) { %>
             <li class="list-group-item">
-              <h3><%= locals.schoolNames[i] %><button style="float: right;" class="btn btn-success">Learn more</button></h3>
+              <h3><%= locals.schoolNames[i] %><button style="float: right;" class="btn btn-primary">Learn more</button></h3>
               <p class="text-muted"><%= locals.cities[i] %>, <%= locals.states[i] %></p>
             </li>
           <% } %>
