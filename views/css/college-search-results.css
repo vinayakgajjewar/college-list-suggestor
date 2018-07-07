@@ -5,3 +5,8 @@ body {
 .card {
   margin-top: 20px;
 }
+
+#page-heading {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
