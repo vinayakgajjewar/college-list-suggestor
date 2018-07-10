@@ -81,7 +81,7 @@ app.post("/search", function(req, res) {
   // Replace all instances of a space with "%20"
   var requestString = req.body.schoolName.replace(/ /g, "%20");
 
-  api.makeAPICall(requestString, "2015", function(results) {
+  api.getSearchResults(requestString, "2015", function(results) {
 
     var schoolNameArray = [];
     var citiesArray = [];

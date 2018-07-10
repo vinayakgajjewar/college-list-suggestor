@@ -3,7 +3,7 @@
 var request = require("request");
 
 // Make the function available outside this file
-exports.makeAPICall = function(schoolName, year, then) {
+exports.getSearchResults = function(schoolName, year, then) {
   // "then" is the callback function to execute after fetching the data
   // We'll feed that function the results
   // This is to make sure that any code that tries to use the results are only
