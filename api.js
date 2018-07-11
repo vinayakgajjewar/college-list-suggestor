@@ -27,4 +27,4 @@ exports.getSearchResults = function(schoolName, year, then) {
     var results = JSON.parse(body).results;
     then(results);
   });
-}
+};
