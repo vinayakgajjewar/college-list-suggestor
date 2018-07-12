@@ -1,0 +1,5 @@
+{
+  "port": 3001,
+  "dbURI": "mongodb://college-search-client:college-search-client-1@ds018508.mlab.com:18508/college-search-db",
+  "apiKey": "m47uZ5ouIEVWso3e2SOv4Jhv2clpeEEoggaigffk"
+}

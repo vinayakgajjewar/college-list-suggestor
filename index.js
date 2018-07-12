@@ -5,6 +5,10 @@ var app = express();
 
 app.use(express.static("views"));
 
+var config = require('./config.json');
+var port = config.port;
+var dbURI = config.dbURI;
+
 // Set the templating engine
 app.set("view engine", "ejs");
 
@@ -16,9 +20,6 @@ var collegelist = require("./collegelist");
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
-var port = 3001; // So I can run multiple servers at the same time
-
-var dbURI = "mongodb://college-search-client:college-search-client-1@ds018508.mlab.com:18508/college-search-db";
 var db;
 
 var MongoClient = require("mongodb").MongoClient;

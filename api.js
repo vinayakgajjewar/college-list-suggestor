@@ -2,6 +2,8 @@
 // So it's not visible by looking at the source code
 var request = require("request");
 
+var config = require('./config.json');
+
 // Make the function available outside this file
 exports.getSearchResults = function(schoolName, year, then) {
   // "then" is the callback function to execute after fetching the data
@@ -9,7 +11,7 @@ exports.getSearchResults = function(schoolName, year, then) {
   // This is to make sure that any code that tries to use the results are only
   // able to access it after the results have actually been fetched
 
-  var apiKey = "m47uZ5ouIEVWso3e2SOv4Jhv2clpeEEoggaigffk";
+  var apiKey = config.apiKey;
 
   var url = "https://api.data.gov/ed/collegescorecard/v1/schools";
 
