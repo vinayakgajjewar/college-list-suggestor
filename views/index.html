@@ -29,6 +29,10 @@
             <a class="nav-link" href="/about">About</a>
           </li>
         </ul>
+        <form action="/search" method="POST" class="form-inline">
+          <input class="form-control mr-sm-2" type="test" name="schoolName" placeholder="Search for a college">
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
     </nav>
     <div class="jumbotron" id="page-heading">
@@ -118,7 +122,7 @@
                     <option value="Wyoming">Wyoming</option>
                   </select>
                 </div>
-                <button class="btn btn-primary btn-block" type="submit" id="collegeListSubmitBtn">Make my college list!</button>
+                <button class="btn btn-outline-primary btn-block" type="submit" id="collegeListSubmitBtn">Make my college list!</button>
               </form>
             </div>
           </div>
@@ -134,7 +138,7 @@
                   <label for="schoolNameInput">Enter the name of a college you want to learn more about</label>
                   <input id="schoolNameInput" name="schoolName" class="form-control" placeholder="Super Cool University" type="text">
                 </div>
-                <button id="searchSubmitBtn" type="submit" class="btn btn-primary btn-block">Find my college!</button>
+                <button id="searchSubmitBtn" type="submit" class="btn btn-outline-primary btn-block">Find my college!</button>
               </form>
             </div>
           </div>
