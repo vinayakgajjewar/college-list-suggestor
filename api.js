@@ -30,3 +30,19 @@ exports.getSearchResults = function(schoolName, year, then) {
     then(results);
   });
 };
+
+exports.getCollegeInfo = function(unitId, year, then) {
+  var apiKey = config.apiKey;
+  var url = 'https://api.data.gov/ed/collegescorecard/v1/schools';
+  var fullURL = url + '?id=' + unitId + '&fields=school.name,school.city,school.state,school.school_url,school.price_calculator_url,2015.admissions.admission_rate.overall' + '&api_key=' + apiKey;
+
+  request(fullURL, function(error, response, body) {
+    if (error) {
+      console.log(error);
+    }
+
+    var results = JSON.parse(body).results;
+    console.log(results);
+    then(results);
+  });
+}
