@@ -16,6 +16,11 @@ var api = require("./api");
 
 var collegelist = require("./collegelist");
 
+var indexRouter = require('./routes/index');
+var searchResultsRouter = require('./routes/college-search-results');
+var collegeInfoRouter = require('./routes/college-info');
+var aboutPageRouter = require('./routes/about');
+
 // For reading data from the form element
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -38,13 +43,10 @@ MongoClient.connect(dbURI, function(err, client) {
 
 });
 
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/views/index.html");
-});
-
-app.get("/about", function(req, res) {
-  res.sendFile(__dirname + "/views/about.html");
-});
+app.use('/', indexRouter);
+app.use('/about', aboutPageRouter);
+app.use('/search', searchResultsRouter);
+app.use('/learn-more', collegeInfoRouter);
 
 app.post("/student-profile", function(req, res) {
   console.log("POST /student-profile");
@@ -66,53 +68,6 @@ app.post("/student-profile", function(req, res) {
   res.redirect("/");
 });
 
-// Redirect to /
-app.get("/search", function(req, res) {
-  res.redirect("/");
-});
-
-// Redirect to /
-app.get("/learn-more", function(req, res) {
-  res.redirect("/");
-});
-
-app.post("/search", function(req, res) {
-  console.log("POST /search");
-
-  // Replace all instances of a space with "%20"
-  var requestString = req.body.schoolName.replace(/ /g, "%20");
-
-  api.getSearchResults(requestString, "2015", function(results) {
-
-    var schoolNameArray = [];
-    var citiesArray = [];
-    var statesArray = [];
-    var idArray = [];
-
-    // Loop through the "results" array and push each school name
-    for (var i = 0; i < results.length; i++) {
-      schoolNameArray.push(results[i]["school.name"]);
-      citiesArray.push(results[i]["school.city"]);
-      statesArray.push(results[i]["school.state"]);
-      idArray.push(results[i]["id"]);
-    }
-
-    var localsObj = {
-      schoolNames: schoolNameArray,
-      cities: citiesArray,
-      states: statesArray,
-      ids: idArray
-    }
-
-    res.render("college-search-results.ejs", {locals: localsObj});
-  });
-});
-
-app.post("/learn-more", function(req, res) {
-  console.log("POST /learn-more");
-  res.render("college-info.ejs", {locals: req.body.unitId}); // Make an API call here
-});
-
-app.use(function(req, res, next) {
+app.use(function(req, res) {
   res.status(404).sendFile(__dirname + "/views/404.html")
 });
