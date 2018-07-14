@@ -4,7 +4,7 @@
   "description": "A web app to recommend colleges to users based on location, test scores, and GPA",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js"
+    "test": "nodemon app.js"
   },
   "repository": {
     "type": "git",
