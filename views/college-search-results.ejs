@@ -27,7 +27,7 @@
         </ul>
         <form action="/search" method="POST" class="form-inline">
           <input class="form-control mr-sm-2" type="test" name="schoolName" placeholder="Search for a college">
-          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
     </nav>
@@ -41,7 +41,7 @@
         <ul class="list-group list-group-flush">
           <% for (var i = 0; i < locals.schoolNames.length; i++) { %>
             <li class="list-group-item">
-              <h3><%= locals.schoolNames[i] %><button style="float: right;" id="<%= i %>" class="btn btn-outline-primary">Learn more</button></h3>
+              <h3><%= locals.schoolNames[i] %><button style="float: right;" id="<%= i %>" class="btn btn-primary">Learn more</button></h3>
               <p class="text-muted"><%= locals.cities[i] %>, <%= locals.states[i] %></p>
             </li>
             <script>
