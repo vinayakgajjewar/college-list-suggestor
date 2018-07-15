@@ -16,7 +16,7 @@ exports.getSearchResults = function(schoolName, year, then) {
   var url = "https://api.data.gov/ed/collegescorecard/v1/schools";
 
   // Append the API key to the URL
-  var fullURL = url +  "?school.name=" + schoolName + "&fields=id,school.name,school.city,school.state," + "&api_key=" + apiKey;
+  var fullURL = url +  "?school.name=" + schoolName + "&fields=id,school.name,school.city,school.state" + "&api_key=" + apiKey;
 
   request(fullURL, function(error, response, body) {
     if (error) {
